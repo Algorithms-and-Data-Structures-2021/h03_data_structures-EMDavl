@@ -19,9 +19,10 @@ namespace itis {
         if(size_ == 0){
             front_ = new DoublyNode(e, nullptr, nullptr);
             back_ = front_;
+        }else {
+            front_->previous = new DoublyNode(e, nullptr, front_);
+            front_ = front_->previous;
         }
-        front_->previous = new DoublyNode(e, nullptr, front_);
-        front_ = front_->previous;
         size_++;
     }
 
